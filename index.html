@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#071924">
+  <title>Riverpark Regional Airport | Friday Night Storm</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><img src="assets/riverpark-logo.svg" alt="Riverpark Regional Airport logo"><div><p class="eyebrow">RPA // RIVERPARK, ARKANSAS</p><h1>Riverpark Regional Airport</h1></div></div>
+      <div class="scenario"><span class="status-dot"></span><div><p class="eyebrow">LIVE OPERATIONS</p><strong>Friday Night Storm</strong></div></div>
+      <button id="restartTop" class="ghost">Restart shift</button>
+    </header>
+    <section class="hero">
+      <div><p class="eyebrow">AIRPORT DIRECTOR SIMULATION</p><h2>Hold the line before the storm arrives.</h2><p id="briefingText">Friday, 5:00 PM. Riverpark is entering its evening departure bank with a thunderstorm closing in from the west.</p></div>
+      <div class="storm-card"><span>STORM ETA</span><strong id="stormEta">45:00</strong><small id="stormLabel">Runway capacity will fall from 20 to 12 movements/hour.</small></div>
+    </section>
+    <section class="metrics" aria-label="Airport metrics">
+      <article><span>Cash reserve</span><strong id="cash">$1.800M</strong><small id="cashNote">Emergency spending: $0</small></article>
+      <article><span>Passenger satisfaction</span><strong id="passenger">80%</strong><small>Terminal experience</small></article>
+      <article><span>Airline confidence</span><strong id="airline">78%</strong><small>Schedule reliability</small></article>
+      <article><span>Cargo confidence</span><strong id="cargo">72%</strong><small>Overnight commitments</small></article>
+      <article><span>Safety score</span><strong id="safety">100</strong><small>Non-negotiable</small></article>
+    </section>
+    <section class="workspace">
+      <div class="map-panel panel">
+        <div class="panel-heading"><div><p class="eyebrow">LIVE MAP</p><h3>Riverpark operations grid</h3></div><span id="clock">17:00</span></div>
+        <div class="airport-map">
+          <div class="storm-front"></div><div class="runway"><span>18 / 36</span></div><div class="taxiway"></div>
+          <div class="terminal"><div class="terminal-label">TERMINAL A</div><div class="gates"><button class="gate">G1</button><button class="gate">G2</button><button class="gate">G3</button><button class="gate warning" id="gate4">G4</button><button class="gate">G5</button><button class="gate">G6</button><button class="gate">G7</button><button class="gate">G8</button></div></div>
+          <div class="plane inbound" id="rp214">RP214</div><div class="plane outbound">OC318</div><div class="cargo-stand" id="cargoStand">CR801<br><small>CARGO</small></div>
+          <div class="security-node" id="securityNode">SECURITY<br><strong>26 min</strong></div><div class="baggage-node" id="baggageNode">BELT 2<br><strong>55%</strong></div>
+          <div class="legend"><span><i class="green"></i> Stable</span><span><i class="amber"></i> At risk</span><span><i class="red"></i> Critical</span></div>
+        </div>
+      </div>
+      <aside class="panel command-panel"><div class="panel-heading"><div><p class="eyebrow">COMMAND QUEUE</p><h3 id="decisionTitle">Priority one: protect security</h3></div><span id="decisionStep">01 / 04</span></div><p id="decisionText">Security wait has reached 26 minutes. Two departures begin boarding within 35 minutes. Choose your first intervention.</p><div id="choices" class="choices"></div><div id="choiceResult" class="choice-result" aria-live="polite"></div></aside>
+    </section>
+    <section class="lower-grid">
+      <section class="panel alerts"><div class="panel-heading"><div><p class="eyebrow">OPERATIONS LOG</p><h3>RIOC incident feed</h3></div><span class="live-tag">LIVE</span></div><ol id="log"></ol></section>
+      <section class="panel status"><div class="panel-heading"><div><p class="eyebrow">SYSTEM HEALTH</p><h3>Pressure points</h3></div></div><div class="system-row"><span>Security queue</span><div class="bar"><b id="securityBar" style="width:82%"></b></div><strong id="securityValue">26 min</strong></div><div class="system-row"><span>Gate 4 availability</span><div class="bar"><b id="gateBar" style="width:78%"></b></div><strong id="gateValue">Conflict</strong></div><div class="system-row"><span>Baggage Belt 2</span><div class="bar"><b id="beltBar" style="width:55%"></b></div><strong id="beltValue">55%</strong></div><div class="system-row"><span>Cargo CR801</span><div class="bar"><b id="cargoBar" style="width:64%"></b></div><strong id="cargoValue">45 min</strong></div></section>
+    </section>
+    <section id="report" class="report hidden" aria-live="polite"><div class="report-card"><p class="eyebrow">SHIFT COMPLETE</p><h2 id="reportTitle">Riverpark holds the line.</h2><p id="reportSummary"></p><div id="scoreGrid" class="score-grid"></div><button id="restartReport" class="primary">Run the shift again</button></div></section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

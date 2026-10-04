@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: riverpark-regional-airport
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    autoDeploy: true
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: public, max-age=3600
