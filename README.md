@@ -69,3 +69,10 @@ Riverpark is fictional. It uses invented airlines, flights, metrics, facilities,
 - Optional saved-game support
 
 Built as the first playable prototype for Riverpark Regional Airport.
+## Passenger journeys (separate mode)
+
+Open `passenger.html` or choose **Passenger journeys** from the director header. Includes ticketing, transfers, check-in, luggage, security, gate changes, boarding, seat selection, flight phases, arrivals, collection and a complete return with hotel checkout. Saves and JSON backups are independent of the director game.
+
+The calendar enforces fictional holiday windows for the entire 14-day itinerary. The future vacation-city handoff is explicitly unconnected; the stay can be advanced to day 14 to practice the return. See [PASSENGER-MODE.md](PASSENGER-MODE.md) for engine integration, rules, sources and limitations.
+
+Run `node tests/passenger.cjs` for both-leg and weather regression tests.
